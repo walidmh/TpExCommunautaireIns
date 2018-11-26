@@ -17,11 +17,6 @@ class FAQ
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $FAQId;
-
-    /**
      * @ORM\Column(type="string", length=150)
      */
     private $FAQQuestion;
@@ -34,18 +29,6 @@ class FAQ
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getFAQId(): ?int
-    {
-        return $this->FAQId;
-    }
-
-    public function setFAQId(int $FAQId): self
-    {
-        $this->FAQId = $FAQId;
-
-        return $this;
     }
 
     public function getFAQQuestion(): ?string

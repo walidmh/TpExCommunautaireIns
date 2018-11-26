@@ -17,11 +17,6 @@ class Feature
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $FeatureId;
-
-    /**
      * @ORM\Column(type="string", length=100)
      */
     private $FeatureName;
@@ -49,18 +44,6 @@ class Feature
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getFeatureId(): ?int
-    {
-        return $this->FeatureId;
-    }
-
-    public function setFeatureId(int $FeatureId): self
-    {
-        $this->FeatureId = $FeatureId;
-
-        return $this;
     }
 
     public function getFeatureName(): ?string

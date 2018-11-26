@@ -17,11 +17,6 @@ class Bug
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $BugId;
-
-    /**
      * @ORM\Column(type="string", length=100)
      */
     private $BugName;
@@ -36,21 +31,15 @@ class Bug
      */
     private $BugStatus;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Comment", inversedBy="bugs")
+     */
+    private $comments;
+
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getBugId(): ?int
-    {
-        return $this->BugId;
-    }
-
-    public function setBugId(int $BugId): self
-    {
-        $this->BugId = $BugId;
-
-        return $this;
     }
 
     public function getBugName(): ?string
@@ -88,4 +77,17 @@ class Bug
 
         return $this;
     }
+
+    public function getComments(): ?Comment
+    {
+        return $this->comments;
+    }
+
+    public function setComments(?Comment $comments): self
+    {
+        $this->comments = $comments;
+
+        return $this;
+    }
+
 }
