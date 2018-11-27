@@ -32,7 +32,7 @@ class Bug
     private $BugStatus;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Comment", inversedBy="bugs")
+     * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="bugs")
      */
     private $comments;
 

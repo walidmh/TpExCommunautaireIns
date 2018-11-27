@@ -24,7 +24,7 @@ class Comment
     private $CommentDescription;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Bug", mappedBy="comments")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Bug", inversedBy="comments")
      */
     private $bugs;
 
