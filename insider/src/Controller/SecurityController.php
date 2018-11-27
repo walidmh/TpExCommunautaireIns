@@ -31,14 +31,7 @@ class SecurityController extends Controller
             'error' => $helper->getLastAuthenticationError(),
         ]);
     }
-    /**
-     * @Route("/logout", name="logout")
-     * @throws \Exception
-     */
-    public function logout(): void
-    {
-        throw new \Exception('This should never be reached!');
-    }
+
     /**
      * @Route("/register", name="registration")
      * @param Request $request
@@ -49,7 +42,7 @@ class SecurityController extends Controller
     public function registerAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
         if ($this->getUser() instanceof User) {
-            return $this->redirectToRoute('app_default_home');
+            return $this->redirectToRoute('bug_index');
         }
         $user = new User();
         $form = $this->createForm(UserType::class, $user);

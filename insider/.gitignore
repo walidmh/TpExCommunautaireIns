@@ -5,6 +5,8 @@
 /public/bundles/
 /var/
 /vendor/
+docker-compose.yml
+.env
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###

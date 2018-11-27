@@ -58,8 +58,8 @@
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Owner>api-platform</Owner>
-      <IntrospectionTimestamp>2018-11-27.15:12:47.370</IntrospectionTimestamp>
-      <IntrospectionStateNumber>561</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-11-27.16:54:21.561</IntrospectionTimestamp>
+      <IntrospectionStateNumber>567</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -143,12 +143,12 @@
     <table id="23" parent="11" name="bug">
       <ObjectId>16395</ObjectId>
       <Owner>api-platform</Owner>
-      <StateNumber>561</StateNumber>
+      <StateNumber>566</StateNumber>
     </table>
     <table id="24" parent="11" name="comment">
       <ObjectId>16401</ObjectId>
       <Owner>api-platform</Owner>
-      <StateNumber>561</StateNumber>
+      <StateNumber>566</StateNumber>
     </table>
     <table id="25" parent="11" name="faq">
       <ObjectId>16406</ObjectId>
@@ -172,82 +172,82 @@
       <StateNumber>553</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="29" parent="23" name="comments_id">
-      <Position>2</Position>
-      <DataType>integer|0s</DataType>
-      <StateNumber>553</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="30" parent="23" name="bug_name">
+    <column id="29" parent="23" name="bug_name">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>553</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="31" parent="23" name="bug_description">
+    <column id="30" parent="23" name="bug_description">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>553</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="32" parent="23" name="bug_status">
+    <column id="31" parent="23" name="bug_status">
       <Position>5</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>553</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="33" parent="23" name="bug_pkey">
+    <index id="32" parent="23" name="bug_pkey">
       <ObjectId>16398</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="34" parent="23" name="idx_358cbf1463379586">
-      <ObjectId>16400</ObjectId>
-      <ColNames>comments_id</ColNames>
-    </index>
-    <key id="35" parent="23" name="bug_pkey">
+    <key id="33" parent="23" name="bug_pkey">
       <ObjectId>16399</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>bug_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="36" parent="23" name="fk_358cbf1463379586">
-      <ObjectId>16428</ObjectId>
-      <ColNames>comments_id</ColNames>
-      <RefTableId>16401</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>comment</RefTableName>
-      <RefKeyName>comment_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="37" parent="24" name="id">
+    <column id="34" parent="24" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>555</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="38" parent="24" name="comment_description">
+    <column id="35" parent="24" name="comment_description">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>555</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="39" parent="24" name="comment_pkey">
+    <column id="36" parent="24" name="bugs_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>565</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="37" parent="24" name="comment_pkey">
       <ObjectId>16404</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="40" parent="24" name="comment_pkey">
+    <index id="38" parent="24" name="idx_9474526c1132a6cd">
+      <ObjectId>16438</ObjectId>
+      <ColNames>bugs_id</ColNames>
+    </index>
+    <key id="39" parent="24" name="comment_pkey">
       <ObjectId>16405</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>comment_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
+    <foreign-key id="40" parent="24" name="fk_9474526c1132a6cd">
+      <ObjectId>16433</ObjectId>
+      <ColNames>bugs_id</ColNames>
+      <RefTableId>16395</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>bug</RefTableName>
+      <RefKeyName>bug_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
     <column id="41" parent="25" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>

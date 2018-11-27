@@ -1,3 +1,7 @@
+controllers:
+    resource: ../../src/Controller/
+    type: annotation
+
 controllers_back:
     resource: ../../src/Controller/Back
     type: annotation
@@ -8,3 +12,5 @@ controllers_front:
     type: annotation
     prefix: /
 
+logout:
+    path: /logout
