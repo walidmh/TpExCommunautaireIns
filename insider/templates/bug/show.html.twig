@@ -28,7 +28,7 @@
 
     <a href="{{ path('bug_index') }}">back to list</a>
 
-    <a href="{{ path('bug_edit', {'id': bug.id}) }}">edit</a>
+    <a href="{{ path('bug_edit', {'slug': bug.slug}) }}">edit</a>
 
     {{ include('bug/_delete_form.html.twig') }}
 {% endblock %}

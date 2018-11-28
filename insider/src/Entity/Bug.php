@@ -2,13 +2,17 @@
 
 namespace App\Entity;
 
+use App\Entity\Traits\TimestampableTrait;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BugRepository")
  */
 class Bug
 {
+    use TimestampableTrait;
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -30,6 +34,13 @@ class Bug
      * @ORM\Column(type="string", length=50)
      */
     private $BugStatus;
+
+    /**
+     * @Gedmo\Slug(field={"BugName"})
+     * @ORM\Column(type="string", length=128, unique=true)
+     */
+    private $slug;
+
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="bugs")
@@ -88,6 +99,22 @@ class Bug
         $this->comments = $comments;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param mixed $slug
+     */
+    public function setSlug($slug): void
+    {
+        $this->slug = $slug;
     }
 
 }

@@ -47,7 +47,7 @@ class BugController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="bug_show", methods="GET")
+     * @Route("/{slug}", name="bug_show", methods="GET")
      */
     public function show(Bug $bug): Response
     {
