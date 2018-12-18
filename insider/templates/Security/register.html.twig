@@ -2,6 +2,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {{ parent() }}
     {{ form_start(form) }}
     {{ form_row(form.email) }}
     {{ form_row(form.password.first) }}
