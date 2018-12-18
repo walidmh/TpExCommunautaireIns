@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Entity\Traits\TimestampableTrait;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BugRepository")
@@ -22,6 +24,9 @@ class Bug
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotNull
+     * @Assert\NotB
+     *
      */
     private $BugName;
 

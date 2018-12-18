@@ -24,6 +24,7 @@ class Feature
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="La description ne peut pas etre vide")
      */
     private $FeatureDescription;
 

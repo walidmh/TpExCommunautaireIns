@@ -22,6 +22,8 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      * @Assert\Email(message="The email {{ value }} is not a valid email")
+     * @Assert\NotBlank
+     * @Assert\NotNull
      */
     private $email;
 
@@ -34,7 +36,7 @@ class User implements UserInterface
      * @var string The hashed password
      * @ORM\Column(type="string")
      * @Assert\NotBlank
-     * @Assert\Length(min=7)
+     * @Assert\Length(min=7, message="Le mot de passe doit comporter au minimum 7 caracteres")
      */
     private $password;
 
